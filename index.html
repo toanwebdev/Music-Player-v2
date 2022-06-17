@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="./assets/boxicons-2.1.0/css/boxicons.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+
+<body>
+  <div class="app">
+    <div class="top-bar">
+      <div class="top-bar__heart-btn">
+        <i class='top-bar__heart-icon bx bx-heart'></i>
+        <i class='top-bar__heart-fill-icon bx bxs-heart'></i>
+      </div>
+      <span>Now playing</span>
+      <i class='top-bar__playlist-btn bx bxs-playlist'></i>
+    </div>
+
+    <div class="song-img">
+      <img src="" alt="">
+    </div>
+
+    <div class="song-detail">
+      <p class="song-detail__name">1234</p>
+      <p class="song-detail__singer">4567</p>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar">
+        <audio src="" class="main-audio"></audio>
+      </div>
+
+      <div class="song-timer">
+        <span class="song-timer__current">
+          0:00
+        </span>
+        <span class="song-timer__max-duration">
+          0:00
+        </span>
+      </div>
+    </div>
+
+    <div class="control">
+      <i class='control__repeat-btn bx bx-repost'></i>
+      <i class='control__prev-btn bx bx-rewind'></i>
+
+      <div class="control__play-pause">
+        <i class='control__play-btn bx bx-play-circle'></i>
+        <i class='control__pause-btn bx bx-pause-circle'></i>
+      </div>
+
+      <i class='control__next-btn bx bx-fast-forward'></i>
+      <i class='control__random-btn bx bx-shuffle'></i>
+    </div>
+
+    <div class="music-list">
+      <div class="music-list__header">
+        <div class="music-list-row music-list__header-row">
+          <i class='bx bxs-playlist'></i>
+          <span>Music List</span>
+        </div>
+        <i class='music-list__header-close-btn bx bx-x'></i>
+      </div>
+
+      <ul class="music-list-songs">
+      </ul>
+    </div>
+  </div>
+
+
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

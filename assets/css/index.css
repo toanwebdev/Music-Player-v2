@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: #cfcfcf;
+}
+
+.app {
+	width: 400px;
+	height: 650px;
+	padding: 25px 30px;
+	position: relative;
+
+	overflow: hidden;
+	border-radius: 10px;
+	background: linear-gradient(#9ce3ff 0%, #fd878d 90%);
+	box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.342);
+}
+
+.top-bar,
+.song-timer,
+.control,
+.music-list__header,
+.music-list__item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.top-bar i {
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.top-bar span {
+	font-size: 18px;
+}
+
+.top-bar__heart-btn {
+	height: 24px;
+}
+
+.top-bar__heart-fill-icon,
+.top-bar__heart-btn.active .top-bar__heart-icon {
+	display: none;
+}
+
+.top-bar__heart-btn.active .top-bar__heart-fill-icon {
+	display: block;
+	color: #c300ff;
+}
+
+.song-img {
+	width: 280px;
+	height: 280px;
+	overflow: hidden;
+	margin: 30px auto;
+
+	border-radius: 50%;
+	box-shadow: 0 0 0 4px #fff, rgba(0, 0, 0, 0.4) 0px 4px 12px;
+}
+
+.song-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.song-detail {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.song-detail__name {
+	font-size: 20px;
+}
+
+.song-detail__singer {
+	font-size: 15px;
+	opacity: 0.9;
+	line-height: 30px;
+}
+
+.progress {
+	height: 6px;
+	width: 100%;
+	border-radius: 50px;
+	background-color: #f0f0f081;
+	cursor: pointer;
+}
+
+.progress-bar {
+	height: inherit;
+	width: 0%;
+	position: relative;
+	border-radius: inherit;
+	background-color: #fff;
+}
+
+.progress-bar::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: -5px;
+	z-index: 1;
+
+	transform: translateY(-50%);
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+
+	display: none;
+	opacity: 0;
+	background: inherit;
+	transition: opacity 0.2s ease;
+}
+
+.progress:hover .progress-bar::before {
+	opacity: 1;
+	display: block;
+}
+
+.song-timer {
+	margin-top: 2px;
+}
+
+.song-timer span {
+	font-size: 13px;
+}
+
+.control {
+	margin: 70px 0 5px;
+}
+
+.control i {
+	font-size: 30px;
+	user-select: none;
+	cursor: pointer;
+}
+
+i.control__repeat-btn.active,
+i.control__random-btn.active {
+	color: #c300ff;
+}
+
+i.control__prev-btn,
+i.control__next-btn {
+	font-size: 35px;
+}
+
+.control__play-pause {
+	height: 45px;
+}
+
+.control__play-pause i {
+	font-size: 45px;
+}
+
+.control__play-pause .control__pause-btn {
+	display: none;
+}
+
+.control__play-pause.playing .control__play-btn {
+	display: none;
+}
+
+.control__play-pause.playing .control__pause-btn {
+	display: block;
+}
+
+.music-list {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: -50%;
+
+	z-index: 5;
+	opacity: 0;
+	padding: 15px 30px;
+	border-radius: 10px;
+
+	box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+	background: linear-gradient(rgba(255, 255, 255, 0.973), transparent),
+		linear-gradient(to top left, rgb(255, 23, 23), transparent),
+		linear-gradient(to top right, rgb(0, 183, 255), transparent);
+	background-blend-mode: screen;
+	transition: all 0.3s ease-in-out;
+}
+
+.music-list.show {
+	opacity: 1;
+	bottom: 0;
+}
+
+.music-list ul {
+	padding: 0;
+	list-style: none;
+	max-height: 260px;
+	overflow-y: auto;
+}
+
+.music-list__item {
+	cursor: pointer;
+	padding: 5px 0;
+	margin-bottom: 5px;
+	color: #000;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.music-list__item:last-child {
+	border-bottom: none;
+}
+
+.music-list-row {
+	font-size: 20px;
+}
+
+.music-list__header-row {
+	display: flex;
+	align-items: center;
+	color: #515c6f;
+}
+
+.music-list__header-row i {
+	font-size: 22px;
+	margin-right: 5px;
+}
+
+.music-list__header-row span {
+	font-size: 18px;
+}
+
+.music-list__header-close-btn {
+	font-size: 25px;
+	color: #515c6f;
+}
+
+.music-list__header-close-btn:hover {
+	color: #000;
+	cursor: pointer;
+}
+
+.music-list__item-name {
+	display: block;
+	font-size: 15px;
+	color: #000;
+}
+
+.music-list__item-singer {
+	font-size: 13px;
+	opacity: 0.6;
+	color: #000;
+}
+
+.audio-duration {
+	font-size: 16px;
+	padding-left: 10px;
+}
+
+.music-list ul::-webkit-scrollbar {
+	width: 0;
+}
+
+.music-list__item:hover,
+.music-list__item:hover .music-list__item-name,
+.music-list__item:hover .music-list__item-singer,
+.music-list__item.playing,
+.music-list__item.playing .music-list__item-name,
+.music-list__item.playing .music-list__item-singer {
+	color: #c300ff;
+}
