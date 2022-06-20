@@ -284,7 +284,7 @@ i.control__next-btn {
 @media only screen and (max-width: 768px) {
 	.app {
 		width: 320px;
-		height: 550px;
+		height: 580px;
 		padding: 20px 25px;
 	}
 
