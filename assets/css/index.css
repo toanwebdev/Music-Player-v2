@@ -280,3 +280,42 @@ i.control__next-btn {
 .music-list__item.playing .music-list__item-singer {
 	color: #c300ff;
 }
+
+@media only screen and (max-width: 768px) {
+	.app {
+		width: 320px;
+		height: 550px;
+		padding: 20px 25px;
+	}
+
+	.song-img {
+		width: 220px;
+		height: 220px;
+		margin: 20px auto;
+	}
+
+	.song-detail__name {
+		font-size: 18px;
+	}
+
+	.audio-duration {
+		font-size: 15px;
+	}
+
+	.control i {
+		font-size: 28px;
+	}
+
+	i.control__prev-btn,
+	i.control__next-btn {
+		font-size: 30px;
+	}
+
+	.control__play-pause {
+		height: 40px;
+	}
+
+	.control__play-pause i {
+		font-size: 40px;
+	}
+}
